@@ -4,90 +4,129 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OxeFit XS1 | AI-Powered Smart Fitness System</title>
-<meta name="description" content="OxeFit XS1: an AI-powered smart fitness system for homes, clubs and commercial spaces. Available in Dubai and Abu Dhabi through CoreV.">
+<meta name="description" content="OxeFit XS1: an AI-powered smart fitness system for homes, clubs and commercial spaces. Distributed in the GCC by CoreV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  /* CoreV brand palette */
   :root {
-    --bg: #0f1113;
-    --panel: #171a1d;
-    --text: #f2f3f4;
-    --muted: #a7adb3;
-    --accent: #c9d1d9;
-    --line: #2a2f35;
+    --navy: #0B1A3A;
+    --dark-blue: #0D1420;
+    --light-blue: #85D2FF;
+    --hyper-blue: #2212DC;
+    --electric-blue: #4D92FF;
+    --gray: #8B8D8F;
+    --silver: #C4C4BE;
+    --pearl: #EAEAE8;
+    --coral: #F7491C;
+    --salmon: #FF8A57;
+    --violet: #8A1A9E;
+    --lilac: #B47ED3;
+    --aqua: #41DBB0;
+    --mint: #A4E6BA;
+    --chartreuse: #C4DB00;
+    --citron: #E5E520;
+    --white: #FFFFFF;
+
+    --bg: var(--dark-blue);
+    --panel: var(--navy);
+    --text: var(--white);
+    --muted: var(--silver);
+    --accent: var(--electric-blue);
+    --accent-2: var(--aqua);
+    --line: rgba(234, 234, 232, 0.14);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
   }
   a { color: inherit; }
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+  .brandbar {
+    height: 6px;
+    background: linear-gradient(90deg, var(--electric-blue), var(--hyper-blue), var(--violet), var(--coral), var(--chartreuse));
+  }
 
   header.hero {
-    padding: 72px 0 48px;
+    padding: 80px 0 56px;
     border-bottom: 1px solid var(--line);
+    background: radial-gradient(900px 400px at 85% 0%, rgba(77, 146, 255, 0.18), transparent 70%), var(--bg);
   }
   .eyebrow {
+    display: inline-block;
     text-transform: uppercase;
     letter-spacing: 0.18em;
     font-size: 12px;
-    color: var(--muted);
+    font-weight: 600;
+    color: var(--accent-2);
   }
   h1 {
-    font-size: clamp(36px, 6vw, 64px);
+    font-size: clamp(36px, 6vw, 66px);
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin: 12px 0 16px;
+    line-height: 1.1;
+    margin: 14px 0 18px;
   }
+  h1 span { color: var(--electric-blue); }
   .lead {
-    font-size: clamp(17px, 2.2vw, 20px);
+    font-size: clamp(16px, 2.1vw, 19px);
     color: var(--muted);
     max-width: 680px;
   }
-  .cta-row { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .cta-row { margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap; }
   .btn {
     display: inline-block;
-    padding: 14px 24px;
-    border-radius: 8px;
+    padding: 14px 26px;
+    border-radius: 999px;
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
+    transition: transform .15s ease, opacity .15s ease;
   }
-  .btn-primary { background: var(--text); color: var(--bg); }
-  .btn-ghost { border: 1px solid var(--line); color: var(--text); }
+  .btn:hover { transform: translateY(-1px); opacity: .92; }
+  .btn-primary { background: var(--electric-blue); color: var(--white); }
+  .btn-ghost { border: 1px solid var(--silver); color: var(--white); }
 
-  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section { padding: 64px 0; border-bottom: 1px solid var(--line); }
   section:last-of-type { border-bottom: none; }
-  h2 { font-size: 28px; margin-bottom: 16px; letter-spacing: -0.01em; }
-  h3 { font-size: 18px; margin-bottom: 8px; }
+  h2 { font-size: clamp(26px, 3.4vw, 34px); margin-bottom: 14px; letter-spacing: -0.01em; }
+  h2 .accent { color: var(--aqua); }
+  h3 { font-size: 18px; margin-bottom: 8px; color: var(--white); }
   p { color: var(--muted); margin-bottom: 14px; }
 
   .gallery {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     margin-top: 32px;
   }
   .gallery figure {
     background: var(--panel);
     border: 1px solid var(--line);
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
   }
-  .gallery figure.tall { grid-row: span 2; }
+  .gallery figure.wide { grid-column: span 2; }
   .gallery img {
     width: 100%;
-    height: 100%;
+    height: 260px;
     object-fit: cover;
-    display: block;
-    min-height: 220px;
+    background: #000;
   }
+  .gallery figure.wide img { height: 340px; }
   .gallery figcaption {
-    padding: 10px 14px;
+    padding: 12px 16px;
     font-size: 13px;
-    color: var(--muted);
+    color: var(--silver);
+    border-top: 1px solid var(--line);
   }
+  .gallery figcaption strong { color: var(--white); font-weight: 600; }
 
   .features {
     display: grid;
@@ -98,10 +137,14 @@
   .card {
     background: var(--panel);
     border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 22px;
+    border-top: 3px solid var(--electric-blue);
+    border-radius: 14px;
+    padding: 24px;
   }
-  .card p { margin: 0; font-size: 15px; }
+  .card:nth-child(2) { border-top-color: var(--aqua); }
+  .card:nth-child(3) { border-top-color: var(--lilac); }
+  .card:nth-child(4) { border-top-color: var(--citron); }
+  .card p { margin: 0; font-size: 14px; }
 
   table.specs {
     width: 100%;
@@ -110,38 +153,58 @@
     font-size: 15px;
   }
   table.specs td {
-    padding: 14px 4px;
+    padding: 14px 6px;
     border-bottom: 1px solid var(--line);
     vertical-align: top;
   }
-  table.specs td:first-child { color: var(--muted); width: 40%; }
+  table.specs td:first-child { color: var(--silver); width: 40%; }
+  table.specs td:last-child { color: var(--white); }
 
   .space-note {
     background: var(--panel);
     border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 24px;
+    border-left: 3px solid var(--aqua);
+    border-radius: 14px;
+    padding: 22px 24px;
     margin-top: 24px;
   }
+  .space-note p { margin: 0; }
+
+  .contact-box {
+    background: linear-gradient(135deg, var(--navy), var(--hyper-blue));
+    border-radius: 18px;
+    padding: 40px;
+  }
+  .contact-box p { color: var(--pearl); }
+  .contact-box strong { color: var(--white); }
 
   footer {
-    padding: 40px 0 56px;
-    color: var(--muted);
-    font-size: 14px;
+    padding: 36px 0 48px;
+    color: var(--gray);
+    font-size: 13px;
+    border-top: 1px solid var(--line);
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 860px) {
+    .gallery { grid-template-columns: 1fr 1fr; }
+    .gallery figure.wide { grid-column: span 2; }
+  }
+  @media (max-width: 560px) {
     .gallery { grid-template-columns: 1fr; }
-    .gallery figure.tall { grid-row: auto; }
+    .gallery figure.wide { grid-column: auto; }
+    .gallery img, .gallery figure.wide img { height: 220px; }
+    .contact-box { padding: 28px; }
   }
 </style>
 </head>
 <body>
 
+<div class="brandbar"></div>
+
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">OxeFit XS1 &middot; Smart Fitness System</div>
-    <h1>Train smarter.<br>Build strength with AI guidance.</h1>
+    <span class="eyebrow">OxeFit XS1 &middot; Smart Fitness System</span>
+    <h1>Train smarter.<br><span>Build strength</span> with AI guidance.</h1>
     <p class="lead">
       The OxeFit XS1 is an AI-powered smart fitness system that adapts to your training,
       tracks your progress and keeps every session focused. Compact enough for a
@@ -156,20 +219,36 @@
 
 <section>
   <div class="wrap">
-    <h2>See the XS1</h2>
-    <p>Photos from our Dubai showroom.</p>
+    <h2>See the <span class="accent">XS1</span></h2>
+    <p>Photos taken in our Dubai showroom.</p>
     <div class="gallery">
-      <figure class="tall">
-        <img src="images/xs1-full-view.jpg" alt="OxeFit XS1 full system with tower, platform and bench">
-        <figcaption>The XS1 system: tower, platform and training bench.</figcaption>
+      <figure class="wide">
+        <img src="images/XS1%20Width.JPG" alt="OxeFit XS1 full width view">
+        <figcaption><strong>Full width</strong> &middot; the XS1 system in our showroom.</figcaption>
       </figure>
       <figure>
-        <img src="images/xs1-tower-detail.jpg" alt="OxeFit XS1 tower and attachment detail">
-        <figcaption>Tower and attachment points.</figcaption>
+        <img src="images/XS1%20Depth.JPG" alt="OxeFit XS1 depth view">
+        <figcaption><strong>Depth</strong> &middot; footprint from front to back.</figcaption>
       </figure>
       <figure>
-        <img src="images/xs1-base.jpg" alt="OxeFit XS1 base and platform">
-        <figcaption>Stable base and training platform.</figcaption>
+        <img src="images/XS1%20Width%20while%20folded.JPG" alt="OxeFit XS1 width while folded">
+        <figcaption><strong>Folded width</strong> &middot; compact when stored.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/XS1%20Bench%20Lenght.JPG" alt="OxeFit XS1 training bench length">
+        <figcaption><strong>Bench length</strong> &middot; full-length training bench.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/XS1%20Bench%20Width.JPG" alt="OxeFit XS1 training bench width">
+        <figcaption><strong>Bench width</strong> &middot; stable, wide seat.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/XS1%20Accessory%20Tree%20Lenght.JPG" alt="OxeFit XS1 accessory tree length">
+        <figcaption><strong>Accessory tree length</strong> &middot; attachment rack height.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/XS1%20Accessory%20Tree%20Width.jpeg" alt="OxeFit XS1 accessory tree width">
+        <figcaption><strong>Accessory tree width</strong> &middot; attachment rack spacing.</figcaption>
       </figure>
     </div>
   </div>
@@ -177,7 +256,7 @@
 
 <section>
   <div class="wrap">
-    <h2>Built around you</h2>
+    <h2>Built <span class="accent">around you</span></h2>
     <p>
       The XS1 combines an intelligent training system with a sturdy, compact frame.
       Everything is designed to make each workout effective and easy to start.
@@ -205,8 +284,8 @@
 
 <section id="space">
   <div class="wrap">
-    <h2>Space you need</h2>
-    <p>Approximate floor dimensions, measured on the XS1 in our showroom.</p>
+    <h2>Space <span class="accent">you need</span></h2>
+    <p>Approximate dimensions, measured on the XS1 in our showroom.</p>
     <table class="specs">
       <tr><td>Training platform</td><td>About 2.0 m long &times; 1.1 m deep</td></tr>
       <tr><td>Tower base</td><td>About 45 cm square</td></tr>
@@ -214,7 +293,7 @@
       <tr><td>Recommended clearance</td><td>Around 0.6&ndash;1 m on all sides of the platform</td></tr>
     </table>
     <div class="space-note">
-      <p style="margin:0;">
+      <p>
         Plan for the tower height and ceiling clearance as well as floor space.
         Our team can confirm exact dimensions for your room during a visit.
       </p>
@@ -224,7 +303,7 @@
 
 <section>
   <div class="wrap">
-    <h2>Specifications</h2>
+    <h2><span class="accent">Specifications</span></h2>
     <table class="specs">
       <tr><td>Product line</td><td>XS1 (Consumer and Commercial options available)</td></tr>
       <tr><td>Technology</td><td>AI-powered training guidance and progress tracking</td></tr>
@@ -236,16 +315,16 @@
 
 <section id="contact">
   <div class="wrap">
-    <h2>Visit our showroom</h2>
-    <p>
-      See the OxeFit XS1 in person and find out how it fits your space.
-    </p>
-    <p>
-      <strong style="color:var(--text);">Dubai:</strong> Court Tower, 403 Business Bay<br>
-      <strong style="color:var(--text);">Abu Dhabi:</strong> The Club
-    </p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="https://www.core-velocity.com">Book a demo</a>
+    <div class="contact-box">
+      <h2>Visit our <span class="accent">showroom</span></h2>
+      <p>See the OxeFit XS1 in person and find out how it fits your space.</p>
+      <p>
+        <strong>Dubai:</strong> Court Tower, 403 Business Bay<br>
+        <strong>Abu Dhabi:</strong> The Club
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://www.core-velocity.com">Book a demo</a>
+      </div>
     </div>
   </div>
 </section>
