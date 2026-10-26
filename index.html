@@ -115,11 +115,10 @@
   .gallery figure.wide { grid-column: span 2; }
   .gallery img {
     width: 100%;
-    height: 260px;
-    object-fit: cover;
-    background: #000;
+    height: auto;
+    object-fit: contain;
+    background: var(--navy);
   }
-  .gallery figure.wide img { height: 340px; }
   .gallery figcaption {
     padding: 12px 16px;
     font-size: 13px;
@@ -192,7 +191,6 @@
   @media (max-width: 560px) {
     .gallery { grid-template-columns: 1fr; }
     .gallery figure.wide { grid-column: auto; }
-    .gallery img, .gallery figure.wide img { height: 220px; }
     .contact-box { padding: 28px; }
   }
 </style>
@@ -228,15 +226,15 @@
       </figure>
       <figure>
         <img src="XS1%20Depth.JPG" alt="OxeFit XS1 depth view">
-        <figcaption><strong>Depth</strong> &middot; footprint from front to back.</figcaption>
+        <figcaption><strong>Platform: 2.01 m</strong> &middot; footprint from front to back.</figcaption>
       </figure>
       <figure>
         <img src="XS1%20Width%20while%20folded.JPG" alt="OxeFit XS1 width while folded">
-        <figcaption><strong>Folded width</strong> &middot; compact when stored.</figcaption>
+        <figcaption><strong>Folded width: 44 cm</strong> &middot; compact when stored.</figcaption>
       </figure>
       <figure>
         <img src="XS1%20Bench%20Lenght.JPG" alt="OxeFit XS1 training bench length">
-        <figcaption><strong>Bench length</strong> &middot; full-length training bench.</figcaption>
+        <figcaption><strong>Bench length: 1.33 m</strong> &middot; full-length training bench.</figcaption>
       </figure>
       <figure>
         <img src="XS1%20Bench%20Width.JPG" alt="OxeFit XS1 training bench width">
@@ -248,7 +246,7 @@
       </figure>
       <figure>
         <img src="XS1%20Accessory%20Tree%20Width.jpeg" alt="OxeFit XS1 accessory tree width">
-        <figcaption><strong>Accessory tree width</strong> &middot; attachment rack spacing.</figcaption>
+        <figcaption><strong>Base: 46 cm</strong> &middot; accessory tree base, attachment rack spacing.</figcaption>
       </figure>
     </div>
   </div>
